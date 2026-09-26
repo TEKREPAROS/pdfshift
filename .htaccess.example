@@ -1,0 +1,6 @@
+# Se o provedor usar Passenger, descomente e ajuste o caminho do virtualenv:
+# PassengerEnabled on
+# PassengerAppRoot /home/USUARIO/public_html/xtoa4
+# PassengerBaseURI /xtoa4
+# PassengerPython /home/USUARIO/virtualenv/public_html/xtoa4/3.13/bin/python
+# PassengerStartupFile passenger_wsgi.py
