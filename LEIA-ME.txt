@@ -1,0 +1,9 @@
+DEPLOY — tekreparos.com.br/xtoa4
+Este pacote é para hospedagem que execute Python 3.10+ com Flask/PyMuPDF e suporte WSGI (por exemplo, cPanel com Setup Python App/Passenger). Enviar estes arquivos para public_html/xtoa4 NÃO basta em hospedagem que só sirva PHP/HTML estático.
+1. Confirme com a hospedagem que Python WSGI/Passenger está disponível e solicite o caminho da aplicação, versão Python e virtualenv.
+2. Envie o conteúdo desta pasta para a pasta configurada como raiz da aplicação /xtoa4. Preserve a pasta templates.
+3. Crie o ambiente Python da aplicação e instale requirements.txt nele (Flask e PyMuPDF). O Gunicorn listado é útil apenas se o provedor fornecer serviço WSGI próprio; Passenger usa passenger_wsgi.py.
+4. Configure a aplicação para usar passenger_wsgi.py e o prefixo público /xtoa4 conforme as instruções do provedor. O .htaccess.example é apenas referência: renomeie para .htaccess e edite os caminhos somente se o provedor indicar Apache/Passenger.
+5. Reinicie a aplicação e abra https://tekreparos.com.br/xtoa4/.
+Variável opcional: SUPPORT_WHATSAPP (padrão 55984190295). Upload acima de 20 MiB é recusado e mostra somente o aviso/link do WhatsApp.
+Se a hospedagem não oferecer Python WSGI/Passenger, este pacote não funcionará apenas por upload em /xtoa4; será necessário usar um host Python e configurar proxy reverso, ou solicitar à hospedagem que habilite suporte WSGI.
